@@ -7,17 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
-        <Button Click="Button_Click_2"  Content="Connect devices" Height="43" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="150"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button Click="Button_Click_3"  Content="Auto PVP" Height="43" RenderTransformOrigin="0.5,0.5">
+        <!--<Button Click="Button_Click_3"  Content="Auto PVP" Height="43" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -36,7 +26,102 @@
                     <TranslateTransform Y="150"/>
                 </TransformGroup>
             </Button.RenderTransform>
+        </Button>-->
+        <!--<Button Click="Button_Click_3"  Content="Auto PVP" Height="43" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="150"/>
+                </TransformGroup>
+            </Button.RenderTransform>
         </Button>
-       
+        <Button Click="Button_Click_1"  Content="Stop" Height="43" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="150"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>-->
+        <Button Click="Button_Click_Connect"  Content="Connect devices" Height="43" Margin="0,0,0,10" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform />
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Click="Button_Click_StartAll"  Content="Start All" Height="43" Margin="0,0,0,10" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform />
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Click="Button_Click_StopAll"  Content="StopAll" Height="43" Margin="0,0,0,10" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform />
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <ScrollViewer Height="800">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="250"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ItemsControl x:Name="name">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Label Margin="0,0,0,10"  Width="100" Height="36" Content="{Binding DeviceContent}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <ItemsControl x:Name="map" Grid.Column="1">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <ComboBox Tag="{Binding DropdownID}" SelectionChanged="CbItemSource_SelectionChanged" x:Name="cbItemSource" ItemsSource="{Binding DropdownContent}" Margin="0,0,0,10"  Width="200" Height="36" HorizontalContentAlignment="Center" FontSize="16" VerticalContentAlignment="Center" VerticalAlignment="Center" DisplayMemberPath = "Name" SelectedValuePath = "Value" ></ComboBox>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <ItemsControl x:Name="start" Grid.Column="2">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Tag="{Binding ButtonID}"  Click="Button_Click_Start" Margin="0,0,0,10" Width="100" Height="36" Content="{Binding ButtonContent}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <ItemsControl x:Name="restart" Grid.Column="3">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Tag="{Binding ButtonID}" Click="Button_Click_Restart" Margin="0,0,0,10" Width="100" Height="36" Content="{Binding ButtonContent}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <ItemsControl x:Name="stop" Grid.Column="4">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Tag="{Binding ButtonID}" Click="Button_Click_Stop"  Margin="0,0,0,10" Width="100" Height="36" Content="{Binding ButtonContent}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+        </ScrollViewer>
     </StackPanel>
 </Window>
